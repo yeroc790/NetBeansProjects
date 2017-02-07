@@ -6,7 +6,7 @@
 package main;
 import java.util.Scanner;
 import project1.project1;
-//import project3.project3;
+import project3.project3;
 //import project5.project5;
 //import project8.project8;
 //import project11.project11;
@@ -23,7 +23,7 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         
         project1 p1 = new project1();
-//        project3 p3 = new project3();
+        project3 p3 = new project3();
 //        project5 p5 = new project5();
 //        project8 p8 = new project8();
 //        project11 p11 = new project11();
@@ -53,10 +53,10 @@ public class main {
                     System.out.println("-- Project 1 --");
                     p1.main(args);
                     break;
-//                case 3:
-//                    System.out.println("-- Project 3 --");
-//                    p3.main(args);
-//                    break;
+                case 3:
+                    System.out.println("-- Project 3 --");
+                    p3.main(args);
+                    break;
 //                case 5:
 //                    System.out.println("-- Project 5 --");
 //                    p5.main(args);
