@@ -136,26 +136,49 @@ public class Rainfall {
     
     public void displayRainfall(){
         DecimalFormat num = new DecimalFormat("0.0");
-        System.out.println("\nAverage Rainfall");
-        for (int i = 0; i < 12; i++) {
-            if(i!=11)
-                System.out.print(averageRain[i] + ", ");
-            else
-                System.out.print(averageRain[i]);
+        String[] a = new String[12];
+        
+//        System.out.println("\nAverage Rainfall");
+//        for (int i = 0; i < 12; i++) {
+//            if(i!=11)
+//                System.out.print(averageRain[i] + ", ");
+//            else
+//                System.out.print(averageRain[i]);
+//        }
+//        System.out.println("\nActual Rainfall");
+//        for (int i = 0; i < 12; i++) {
+//            if(i!=11)
+//                System.out.print(actualRain[i] + ", ");
+//            else
+//                System.out.print(actualRain[i]);
+//        }
+//        System.out.println("\nDifference");
+//        for (int i = 0; i < 12; i++) {
+//            if(i!=11)
+//                System.out.print(num.format(difference[i]) + ", ");
+//            else
+//                System.out.print(num.format(difference[i]));
+//        }
+        System.out.print("\t\t\t");
+        for(int i=0;i<a.length;i++){
+            a[i] = (" " + convertMonth(i).substring(0,3).toUpperCase() + ".");
+            System.out.print(a[i] + "\t");
+            if((i+1)==a.length){
+                System.out.print("\n");
+            }
         }
-        System.out.println("\nActual Rainfall");
-        for (int i = 0; i < 12; i++) {
-            if(i!=11)
-                System.out.print(actualRain[i] + ", ");
-            else
-                System.out.print(actualRain[i]);
+        System.out.print("Average Rainfall:\t");
+        for(double temp: averageRain)
+            System.out.print(" " + temp + "\t");
+        System.out.print("\nActual Rainfall:\t");
+        for(double temp: actualRain)
+            System.out.print(" " + temp + "\t");
+        System.out.print("\nDifference:\t\t");
+        for(double temp: difference){
+            if(temp>0)
+                System.out.print("+");
+            System.out.print(num.format(temp) + "\t");
         }
-        System.out.println("\nDifference");
-        for (int i = 0; i < 12; i++) {
-            if(i!=11)
-                System.out.print(num.format(difference[i]) + ", ");
-            else
-                System.out.print(num.format(difference[i]));
-        }
+        System.out.print("\n");
     }
 }
