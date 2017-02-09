@@ -5,6 +5,8 @@
  */
 package project11;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hansenc
@@ -27,7 +29,33 @@ public class Airplane {
         plane[1][3] = 'X'; //2C = X
     }
     
-    public boolean isTaken(String seat){ //eg 2C
+    public static String getInput(){
+        Scanner input = new Scanner(System.in);
+        boolean error = false;
+        String seat = "";
+        
+        do{
+            System.out.println("Please enter a seat number:");
+            System.out.println("(Rows: 1-7, Seats: A-D, eg. 3C)");
+            if(input.hasNextLine()){
+                seat = input.nextLine();
+                if(seat.length()!=2){
+                    System.out.println("Invalid input, try again");
+                    error = true;
+                }else{
+                    error = false;
+                }
+            }
+        }while(error==true);
+        return seat;
+    }
+    
+    /**
+     * Returns true if you were able to reserve the seat, false if it's taken
+     * @param seat String of length 2, in the form of what is in the 'plane' array, eg. 2C
+     * @return 
+     */
+    public boolean chooseSeat(String seat){
         char row = 0, col = 0;
         int i, j;
         
@@ -35,17 +63,21 @@ public class Airplane {
             System.out.println("Invalid argument");
             System.exit(0);
         }else{
-            row = seat.charAt(0); // eg 2, which means i = 1
-            col = seat.charAt(1); // eg C, which means j = 3
+            row = seat.charAt(0);
+            col = seat.charAt(1);
         }
         
-        i = (int) row - 48 - 1; //yet again, off by one bug
+        i = (int) row - 48 - 1;
         j = (int) col - 64;
         
-        if(plane[i][j]=='X')
-            return true;
-        else
+        if(plane[i][j]=='X'){
+            //seat is taken
             return false;
+        }else{
+            //seat is free
+            plane[i][j] = 'X';
+            return true;
+        }
     }
     
     public void displayAirplane(){

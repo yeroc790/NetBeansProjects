@@ -5,6 +5,8 @@
  */
 package project11;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hansenc
@@ -12,16 +14,30 @@ package project11;
 public class project11 {
     public static void main(String[] args) {
         Airplane myPlane = new Airplane();
-        myPlane.displayAirplane();
+        String seat;
+        Scanner input = new Scanner(System.in);
+        boolean quit = false;
+
+        do{
+            myPlane.displayAirplane();          
         
-        if(myPlane.isTaken("2C"))
-            System.out.println("2C is taken yo");
-        else
-            System.out.println("Oh, 3A is free");
-        
-        if(myPlane.isTaken("3A"))
-            System.out.println("3A is taken yo");
-        else
-            System.out.println("Oh, 3A is free");
-    }
+            seat = Airplane.getInput();    
+            System.out.println("seat: " + seat);
+            if(myPlane.chooseSeat(seat))
+                System.out.println("Reservation of seat '" + seat  + "' successful");
+            else
+                System.out.println("Sorry, seat '" + seat + "' is already taken");
+            
+            System.out.println("Would you like to continue? (y or n)");
+            if(input.nextLine().charAt(0)=='y'){
+                quit = false;
+            }else if(input.nextLine().charAt(0)=='n'){
+                quit = true;
+            }else{
+                System.out.println("Invalid input");
+                System.exit(0);
+            }
+            
+        }while(quit==false);
+    }    
 }
