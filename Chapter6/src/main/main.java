@@ -10,7 +10,7 @@ import project3.project3;
 import project5.project5;
 import project8.project8;
 import project11.project11;
-//import project15.project15;
+import project15.project15;
 
 /**
  *
@@ -27,7 +27,7 @@ public class main {
         project5 p5 = new project5();
         project8 p8 = new project8();
         project11 p11 = new project11();
-//        project15 p15 = new project15();
+        project15 p15 = new project15();
         
         while(quit==false){
             System.out.println("\nWhich project would you like to run?");
@@ -69,10 +69,10 @@ public class main {
                     System.out.println("-- Project 11 --");
                     p11.main(args);
                     break;
-//                case 15:
-//                    System.out.println("-- Project 15 --");
-//                    p15.main(args);
-//                    break;
+                case 15:
+                    System.out.println("-- Project 15 --");
+                    p15.main(args);
+                    break;
                 default: 
                     System.out.println("Invalid number, try again");
                     break;
