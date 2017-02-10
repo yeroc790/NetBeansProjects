@@ -16,3 +16,4 @@ private.xml
 *.war
 *.ear
 /Challenges/nbproject/private/
+/Chapter7/nbproject/private/
