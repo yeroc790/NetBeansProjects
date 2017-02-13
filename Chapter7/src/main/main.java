@@ -8,7 +8,7 @@ import java.util.Scanner;
 import project1.project1;
 import project3.project3;
 import project4.project4;
-//import project5.project5;
+import project5.project5;
 //import project6.project6;
 
 /**
@@ -24,7 +24,7 @@ public class main {
         project1 p1 = new project1();
         project3 p3 = new project3();
         project4 p4 = new project4();
-//        project5 p5 = new project5();
+        project5 p5 = new project5();
 //        project6 p6 = new project6();
         
         while(quit==false){
@@ -59,10 +59,10 @@ public class main {
                     System.out.println("-- Project 4 --");
                     p4.main(args);
                     break;
-//                case 5:
-//                    System.out.println("-- Project 5 --");
-//                    p5.main(args);
-//                    break;
+                case 5:
+                    System.out.println("-- Project 5 --");
+                    p5.main(args);
+                    break;
 //                case 6:
 //                    System.out.println("-- Project 6 --");
 //                    p6.main(args);
