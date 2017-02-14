@@ -17,4 +17,17 @@ public class SnakeAlien extends Alien{
     public SnakeAlien(int health){
         super(10,health);
     }
+
+    @Override
+    public int calculateDamage(AlienPack pack) {
+        int damage = 0;
+        Alien temp;
+        
+        for (int i = 0; i < pack.getAliens().length; i++) {
+            temp = pack.getAlien(i);
+            damage += temp.getDamage();
+        }
+        
+        return damage;
+    }
 }

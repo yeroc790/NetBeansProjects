@@ -9,7 +9,7 @@ package project3;
  *
  * @author hansenc
  */
-public class Alien {
+public abstract class Alien {
     private int health; //0=dead, 100=full health
     private String name; //not used in the rest of the program
     private int damage;
@@ -41,15 +41,5 @@ public class Alien {
         return damage;
     }
     
-    public static int calculateDamage(AlienPack pack){
-        int damage = 0;
-        Alien temp;
-        
-        for (int i = 0; i < pack.getAliens().length; i++) {
-            temp = pack.getAlien(i);
-            damage += temp.getDamage();
-        }
-        
-        return damage;
-    }
+    public abstract int calculateDamage(AlienPack pack);
 }

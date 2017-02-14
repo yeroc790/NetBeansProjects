@@ -14,7 +14,7 @@ public class project3 {
     public static void main(String[] args) {
         int damage;
         
-        Alien test = new Alien();
+//        Alien test = new Alien() {};
         SnakeAlien snake = new SnakeAlien();
         OgreAlien ogre = new OgreAlien();
         MarshmallowManAlien steve = new MarshmallowManAlien();
@@ -24,7 +24,7 @@ public class project3 {
         pack.addAlien(ogre,1);
         pack.addAlien(steve, 2);
         
-        damage = Alien.calculateDamage(pack);
+        damage = snake.calculateDamage(pack);
         System.out.println("Total damage: " + damage);
     }
 }
