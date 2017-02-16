@@ -10,5 +10,8 @@ package project4;
  * @author hansenc
  */
 public class Ant extends Organism{
-    
+    public Ant(){
+        super();
+        setType('a');
+    }
 }
