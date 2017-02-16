@@ -10,8 +10,10 @@ package project4;
  * @author hansenc
  */
 public class Ant extends Organism{
-    public Ant(){
-        super();
-        setType('a');
+    private static final int BREED_TIME = 3;
+    
+    public Ant(World world, int x, int y) {
+        super(world, x, y, BREED_TIME);
+        setType('A');
     }
 }

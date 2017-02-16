@@ -19,6 +19,10 @@
  * world starts with 5 doodlebugs and 100 ants
  * 
  * user controls the time steps by pressing ENTER
+ *
+ *
+ * NOTE: This code is heavily inspired by GitHub user 'rgerstenberger', I got stuck and had to restart my code, and I used his as an example of a way to set up the class
+ * https://github.com/rgerstenberger/Doodlebugs_Java/tree/master/src
  */
 package project4;
 
@@ -28,42 +32,6 @@ package project4;
  */
 public class project4 {
     public static void main(String[] args) {
-        Doodlebug bug[] = new Doodlebug[5]; //5 bugs
-        Ant ant[] = new Ant[100]; //100 ants
-        
-        for (int i = 0; i < 100; i++) { //testing
-            ant[i] = new Ant();
-        }
-        
-        for (int i = 0; i < 5; i++) {
-            bug[i] = new Doodlebug();
-        }
-        
-        
-        
-        Organism.populateBoard(bug, ant); //100 ants, 5 bugs  
-        Organism.displayBoard();
-        
-        //EVERY TIME AN ANT IS EATEN, AN X ON THE GRAPH DISAPPEARS, NUMBUGS IS FINE, HOWEVER
-        
-        for (int moves = 0; moves < 10; moves++) {
-            System.out.println("\n-- Time step: " + (moves+1) + " --");
-            System.out.println("-- NumBugs: " + Organism.getNumBugs() + " --");
-            System.out.println("-- NumAnts: " + Organism.getNumAnts() + " --");
-            for (int i = 0; i < 5; i++) {
-                if(bug[i].isNotDead())
-                    bug[i].move();
-            }
-            for (int i = 0; i < 100; i++) {
-                if(ant[i].isNotDead())
-                    ant[i].move();
-            }
-            Organism.displayBoard();
-        }
-        
-        System.out.println("-- Final Display --");
-        System.out.println("-- NumBugs: " + Organism.getNumBugs() + " --");
-        System.out.println("-- NumAnts: " + Organism.getNumAnts() + " --");
-        Organism.displayBoard();
+        World world = new World();
     }
 }
