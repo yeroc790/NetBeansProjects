@@ -28,5 +28,8 @@ public class project1 {
             stand3.justSold();
         }
         stand3.displayInfo();
+        
+        int total = stand1.getNum() + stand2.getNum() + stand3.getNum();
+        System.out.println("Total hotdogs sold: " + total);
     }
 }
