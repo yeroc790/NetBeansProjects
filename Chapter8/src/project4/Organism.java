@@ -30,6 +30,26 @@ public class Organism {
         type = newType;
     }
     
+    public int getX(){
+        return x;
+    }
+    
+    public int getY(){
+        return y;
+    }
+    
+    public int getStepsTaken(){
+        return stepsTaken;
+    }
+    
+    public void setX(int newX){
+        x = newX;
+    }
+    
+    public void setY(int newY){
+        y = newY;
+    }
+    
     public char getType(){
         return type;
     }
@@ -51,6 +71,7 @@ public class Organism {
         simulated = false;
     }
     
+    //the bugs are only moving up and to the left
     public void Move(){
         //pick direction
         int newX = x + World.getRandom(-1,1);
@@ -58,5 +79,20 @@ public class Organism {
         
         //if(point exists && point is empty)
             //set x and y to newX and newY, also use world.setAt(newX, newY, this)
+        if(world.pointExists(newX,newY)){
+            if(world.pointIsFree(newX, newY)){
+                //can move
+                world.changePosition(newX, newY, this);
+            }else{
+                //something else is there
+            }
+        }else{
+            //can't move there
+        }
+    }
+    
+    @Override
+    public String toString(){
+        return ("Organism");
     }
 }

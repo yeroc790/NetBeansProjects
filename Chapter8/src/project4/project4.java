@@ -1,4 +1,6 @@
 /*
+ * TODO: Delete Doodlebug after starving to death
+ * 
  * This is a 2D predator-prey simulator
  * The board is 20x20
  * The prey is ants, the predators are doodlebugs
@@ -26,12 +28,40 @@
  */
 package project4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hansenc
  */
 public class project4 {
     public static void main(String[] args) {
+        System.out.println("\n-- Initial --");
+        boolean quit = false;
+        Scanner input = new Scanner(System.in);
+        int num, timesteps = 1;
+        int[] numOrganisms;
         World world = new World();
+        
+        for(int i = 0; i < 100; i++){
+//        do{
+            System.out.println("\n-- Timestep " + timesteps + " --");
+            world.simulateStep(); //nothing is changing for each simulation
+            numOrganisms = world.checkNumbers();
+            System.out.println("\nNumber of Ants: " + numOrganisms[0]);
+            System.out.println("Number of Doodlebugs: " + numOrganisms[1]);
+            System.out.println("\nEnter 0 to stop, enter any number to continue");
+//            num = input.nextInt();
+//            if(num==0){
+//                quit=true;
+//            }else{
+//                quit=false;
+//            }
+            timesteps++;
+//        }while(quit == false);
+        }
+//        for (int i = 0; i < 10; i++) {
+//            System.out.println(World.getRandom(-1,1));
+//        }
     }
 }

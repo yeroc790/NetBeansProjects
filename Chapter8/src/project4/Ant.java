@@ -16,4 +16,15 @@ public class Ant extends Organism{
         super(world, x, y, BREED_TIME);
         setType('A');
     }
+    
+    @Override
+    public void simulate(){
+        super.simulate();
+        Move();
+    }
+    
+    @Override
+    public String toString(){
+        return ("ant");
+    }
 }

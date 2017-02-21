@@ -5,7 +5,7 @@
  */
 package project4;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -79,9 +79,10 @@ public class World {
     }
     
     public static int getRandom(int min, int max){
-        Random rand = new Random();
-        int n = rand.nextInt(max+1) + min;
-        return n;
+//        Random rand = new Random();
+//        int n = rand.nextInt(max) + min + 1; //this wasn't working
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1); //this works
+        return randomNum;
     }
     
     public void display(){
@@ -95,6 +96,55 @@ public class World {
             }
             System.out.println();
         }
+    }
+    
+    public void changePosition(int newX, int newY, Organism bug){
+        int oldX = bug.getX();
+        int oldY = bug.getY();
+        
+        bugs[oldX][oldY] = null; //change position on the board
+        bugs[newX][newY] = bug;
+        bug.setX(newX);         //change the values that the bug knows
+        bug.setY(newY);
+    }
+    
+    public boolean pointExists(int x, int y){
+        if((x>=0)&&(x<NUM_ROWS)&&(y>=0)&&(y<NUM_COLS)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean pointIsFree(int x, int y){
+        if(pointExists(x,y)){
+            if(bugs[x][y]==null){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            System.out.println("Error: Invalid points");
+            System.exit(0);
+            return false;
+        }
+    }
+    
+    public int[] checkNumbers(){
+        int numAnts = 0, numBugs = 0;
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                if(bugs[row][col]!=null){
+                    if(bugs[row][col].toString()=="doodlebug"){
+                        numBugs++;
+                    }else if(bugs[row][col].toString()=="ant"){
+                        numAnts++;
+                    }
+                }
+            }
+        }
+        int[] array = {numAnts, numBugs};
+        return array;
     }
     /* -- End Other Methods -- */
     
@@ -119,7 +169,7 @@ public class World {
     public void simulate(String type){
         for (int row = 0; row < NUM_ROWS; row++) {
             for (int col = 0; col < NUM_COLS; col++) {
-                if(bugs[row][col] != null && bugs[row][col].toString().equals(type))
+                if(bugs[row][col] != null && bugs[row][col].toString().equals(type)) //if not dead or empty
                     bugs[row][col].simulate();
             }
         }
