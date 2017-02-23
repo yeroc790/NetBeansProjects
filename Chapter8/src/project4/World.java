@@ -108,6 +108,13 @@ public class World {
         bug.setY(newY);
     }
     
+    public void die(Organism bug){
+        int x = bug.getX();
+        int y = bug.getY();
+        
+        bugs[x][y] = null;
+    }
+    
     public boolean pointExists(int x, int y){
         if((x>=0)&&(x<NUM_ROWS)&&(y>=0)&&(y<NUM_COLS)){
             return true;

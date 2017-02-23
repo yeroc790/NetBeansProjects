@@ -43,23 +43,23 @@ public class project4 {
         int[] numOrganisms;
         World world = new World();
         
-        for(int i = 0; i < 100; i++){
-//        do{
+//        for(int i = 0; i < 10; i++){
+        do{
             System.out.println("\n-- Timestep " + timesteps + " --");
             world.simulateStep(); //nothing is changing for each simulation
             numOrganisms = world.checkNumbers();
             System.out.println("\nNumber of Ants: " + numOrganisms[0]);
             System.out.println("Number of Doodlebugs: " + numOrganisms[1]);
             System.out.println("\nEnter 0 to stop, enter any number to continue");
-//            num = input.nextInt();
-//            if(num==0){
-//                quit=true;
-//            }else{
-//                quit=false;
-//            }
+            num = input.nextInt();
+            if(num==0){
+                quit=true;
+            }else{
+                quit=false;
+            }
             timesteps++;
-//        }while(quit == false);
-        }
+        }while(quit == false);
+//        }
 //        for (int i = 0; i < 10; i++) {
 //            System.out.println(World.getRandom(-1,1));
 //        }
