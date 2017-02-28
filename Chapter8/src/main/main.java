@@ -7,8 +7,8 @@ package main;
 import java.util.Scanner;
 import project1.project1;
 import project4.project4;
-//import project5.project5;
-//import project6.project6;
+import project5.project5;
+//import project6.project6; //project6 modifies project 5
 //import project7.project7;
 
 /**
@@ -23,13 +23,13 @@ public class main {
         
         project1 p1 = new project1();
         project4 p4 = new project4();
-//        project5 p5 = new project5();
+        project5 p5 = new project5();
 //        project6 p6 = new project6();
 //        project7 p7 = new project7();
         
         while(quit==false){
             System.out.println("\nWhich project would you like to run?");
-            System.out.println("(1,4,5,6,7) TYPE 0 TO QUIT");
+            System.out.println("(1,4,5,7) TYPE 0 TO QUIT");
             
             do{
                 if(scanner.hasNextInt())
@@ -55,10 +55,10 @@ public class main {
                     System.out.println("-- Project 4 --");
                     p4.main(args);
                     break;
-//                case 5:
-//                    System.out.println("-- Project 5 --");
-//                    p5.main(args);
-//                    break;
+                case 5:
+                    System.out.println("-- Project 5 --");
+                    p5.main(args);
+                    break;
 //                case 6:
 //                    System.out.println("-- Project 6 --");
 //                    p6.main(args);
