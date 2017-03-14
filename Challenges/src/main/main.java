@@ -6,6 +6,7 @@ package main;
 import java.util.Scanner;
 import chapter4.chapter4;
 import temp.temp;
+import array.array;
 
 /**
  *
@@ -19,10 +20,11 @@ public class main {
         
         chapter4 c4 = new chapter4();
         temp t = new temp();
+        array a = new array();
         
         while(quit==false){
             System.out.println("\nWhich chapter challenge project would you like to run?");
-            System.out.println("Valid inputs: (0, 4, 20(temperature)) TYPE 0 TO QUIT");
+            System.out.println("Valid inputs: (0, 4, 20(temperature), 21(array) TYPE 0 TO QUIT");
             
             do{
                 if(scanner.hasNextInt())
@@ -47,6 +49,10 @@ public class main {
                 case 20:
                     System.out.println("-- Temperature --");
                     t.main(args);
+                    break;
+                case 21:
+                    System.out.println("-- Array --");
+                    a.main(args);
                     break;
                 default: 
                     System.out.println("Invalid number, try again");
