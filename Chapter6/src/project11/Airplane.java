@@ -26,7 +26,7 @@ public class Airplane {
                     plane[i][j] = (char) (j + 64);
             }
         }
-        plane[1][3] = 'X'; //2C = X
+//        plane[1][3] = 'X'; //2C = X
     }
     
     public static String getInput(){
