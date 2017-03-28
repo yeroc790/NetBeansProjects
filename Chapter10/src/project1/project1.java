@@ -10,7 +10,6 @@ package project1;
  */
 public class project1 {
     public static void main(String[] args) {
-        SplitFile.initialize();
-        
+//        SplitFile.initialize(); files are created and set up
     }
 }
