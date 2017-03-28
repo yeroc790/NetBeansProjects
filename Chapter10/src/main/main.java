@@ -5,7 +5,7 @@
  */
 package main;
 import java.util.Scanner;
-//import project1.project1;
+import project1.project1;
 //import project2.project2;
 //import project4.project4;
 
@@ -19,7 +19,7 @@ public class main {
         boolean quit=false, error=false;
         Scanner scanner = new Scanner(System.in);
         
-//        project1 p1 = new project1();
+        project1 p1 = new project1();
 //        project2 p2 = new project2();
 //        project4 p4 = new project4();
         
@@ -43,10 +43,10 @@ public class main {
                 case 0:
                     quit = true;
                     break;
-//                case 1:
-//                    System.out.println("-- Project 1 --");
-//                    p1.main(args);
-//                    break;
+                case 1:
+                    System.out.println("-- Project 1 --");
+                    p1.main(args);
+                    break;
 //                case 5:
 //                    System.out.println("-- Project 2 --");
 //                    p5.main(args);
