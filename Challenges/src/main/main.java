@@ -7,6 +7,8 @@ import java.util.Scanner;
 import chapter4.chapter4;
 import temp.temp;
 import array.array;
+import matrix.matrix;
+import inheritance.Inheritance;
 
 /**
  *
@@ -21,10 +23,12 @@ public class main {
         chapter4 c4 = new chapter4();
         temp t = new temp();
         array a = new array();
+        matrix m = new matrix();
+        Inheritance i = new Inheritance(); //inheritance
         
         while(quit==false){
             System.out.println("\nWhich chapter challenge project would you like to run?");
-            System.out.println("Valid inputs: (0, 4, 20(temperature), 21(array) TYPE 0 TO QUIT");
+            System.out.println("Valid inputs: (0, 4, 20(temperature), 21(array), 22(matrix), 23(inheritance) TYPE 0 TO QUIT");
             
             do{
                 if(scanner.hasNextInt())
@@ -53,6 +57,14 @@ public class main {
                 case 21:
                     System.out.println("-- Array --");
                     a.main(args);
+                    break;
+                case 22:
+                    System.out.println("-- Matrix --");
+                    m.main(args);
+                    break;
+                case 23:
+                    System.out.println("-- Inheritance --");
+                    i.main(args);
                     break;
                 default: 
                     System.out.println("Invalid number, try again");
