@@ -20,7 +20,7 @@ public class Inheritance {
         myCar.setManufacturer("Lamborghini");
         myCar.setModel("Muira");
         myCar.setEngine("V8");
-        
+
         System.out.println(myCar.toString());
         System.out.println(yourPlane.toString());
     }
