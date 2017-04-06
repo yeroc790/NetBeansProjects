@@ -1,6 +1,7 @@
 /*
- * Could split the text file into two files or maybe arrays, one for boys, one for girls
- * The popularity is determined by the index number
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package project1;
 
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author hansenc
+ * @author Corey
  */
 public class project1 {
     public static void main(String[] args) {
